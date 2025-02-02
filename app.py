@@ -29,7 +29,7 @@ if uploaded_file is not None:
     st.write("✅ PDF Uploaded Successfully")
 
 submit1 = st.button("Tell Me About the Resume")
-submit2 = st.button("ATS Score")
+submit2 = st.button("Get ATS Score")
 
 # Prompt for Resume Analysis
 input_prompt1 = """
