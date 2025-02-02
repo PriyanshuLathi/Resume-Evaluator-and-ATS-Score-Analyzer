@@ -19,7 +19,7 @@ def extract_text_from_pdf(uploaded_file):
         text += page.get_text("text") + "\n"
     return text
 
-st.set_page_config(page_title="ATS Resume Expert")
+st.set_page_config(page_title="Resume and ATS Score Analyzer", page_icon="📋")
 st.header("Resume Evaluator and ATS Score Analyzer")
 
 input_text = st.text_area("Job Description: ", key="input")
@@ -52,8 +52,9 @@ The percentage should be based on a detailed comparison rather than a fixed numb
 
 if submit1:
     if uploaded_file is not None:
-        pdf_content = extract_text_from_pdf(uploaded_file)
-        response = get_gemini_response(input_text, pdf_content, input_prompt1)
+        with st.spinner("Analyzing Resume... ⏳"):
+            pdf_content = extract_text_from_pdf(uploaded_file)
+            response = get_gemini_response(input_text, pdf_content, input_prompt1)
         st.subheader("Resume Analysis:")
         st.write(response)
     else:
@@ -61,8 +62,9 @@ if submit1:
 
 if submit2:
     if uploaded_file is not None:
-        pdf_content = extract_text_from_pdf(uploaded_file)
-        response = get_gemini_response(input_text, pdf_content, input_prompt2)
+        with st.spinner("Calculating ATS Score... ⏳"):
+            pdf_content = extract_text_from_pdf(uploaded_file)
+            response = get_gemini_response(input_text, pdf_content, input_prompt2)
         st.subheader("Percentage Match:")
         st.write(response)
     else:
