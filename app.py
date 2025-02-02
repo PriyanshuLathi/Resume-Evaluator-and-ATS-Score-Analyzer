@@ -20,7 +20,7 @@ def extract_text_from_pdf(uploaded_file):
     return text
 
 st.set_page_config(page_title="ATS Resume Expert")
-st.header("Resume Evaluator and Applicant Tracking System (ATS)")
+st.header("Resume Evaluator and ATS Score Analyzer")
 
 input_text = st.text_area("Job Description: ", key="input")
 uploaded_file = st.file_uploader("Upload your resume (PDF)...", type=["pdf"])
@@ -29,7 +29,7 @@ if uploaded_file is not None:
     st.write("✅ PDF Uploaded Successfully")
 
 submit1 = st.button("Tell Me About the Resume")
-submit2 = st.button("Percentage Match")
+submit2 = st.button("ATS Score")
 
 # Prompt for Resume Analysis
 input_prompt1 = """
