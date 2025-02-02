@@ -3,7 +3,7 @@ import google.generativeai as genai
 import fitz
 
 api_key = st.secrets["API_KEY"]
-genai.configure(api_key)
+genai.configure(api_key=api_key)
 
 def get_gemini_response(input_text, pdf_content, prompt):
     model = genai.GenerativeModel('gemini-1.5-pro')
