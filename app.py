@@ -1,8 +1,12 @@
 import streamlit as st
 import google.generativeai as genai
 import fitz
+import os
+from dotenv import load_dotenv
 
-api_key = st.secrets["API_KEY"]
+load_dotenv()
+
+api_key = os.getenv("API_KEY")
 genai.configure(api_key=api_key)
 
 def get_gemini_response(input_text, pdf_content, prompt):

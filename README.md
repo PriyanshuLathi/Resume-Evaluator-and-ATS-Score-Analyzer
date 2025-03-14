@@ -14,7 +14,7 @@ The **Resume Evaluator and ATS Score Analyzer** is a **Streamlit** web applicati
 
 ## Demo
 
-Experience the live application: [Resume Evaluator and ATS Score Analyzer](https://resume-evaluator-and-ats-score-analyzer.streamlit.app/)
+Experience the live application: [Resume Evaluator and ATS Score Analyzer](https://resume-evaluator-and-ats-score-analyzer.onrender.com)
 
 ## Tech Stack
 
